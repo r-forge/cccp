@@ -20,7 +20,7 @@ rp <- function(x0, P, mrc, optctrl = ctrl()){
         warning("Sum of marginal risk contributions does not equal one: Normalizing risk contributions.\n")
         mrc <- mrc / sum(mrc)
     }
-    if(class(optctrl) != "Rcpp_CTRL"){
+    if(!is(optctrl, "Rcpp_CTRL")){
         stop("Provided argument for 'optctrl' is not a reference class object 'Rcpp_CTRL'.\n")
     }
     rpp(x0, P, mrc, optctrl)
