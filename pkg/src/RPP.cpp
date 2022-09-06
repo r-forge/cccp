@@ -20,9 +20,9 @@ CPS* rpp(mat x0, mat P, mat mrc, CTRL& ctrl){
   cList.G.insert_rows(0, 1);
   cList.G(0, ne) = -1.0;
   cList.h.zeros(n, 1);
-  cList.dims = {1, P.n_cols};
-  cList.sidx = { {0 , 0},
-	         {1, P.n_cols} };
+  cList.dims << 1 << ne << endr;
+  cList.sidx << 0 << 0 << endr
+	     << 1 << ne << endr;
   cList.K = 2;
   cList.n = n;
   // Primal dual variables
@@ -222,7 +222,7 @@ CPS* rpp(mat x0, mat P, mat mrc, CTRL& ctrl){
       dpdv->z = cList.sslb(dpdv->z, Lambda, false); 
       ts = cList.smss(dpdv->s).max();
       tz = cList.smss(dpdv->z).max();
-      ss << 0.0 << ts << tz << endr;
+      ss = { 0.0, ts, tz };
       tm = ss.max();
       if(tm == 0.0){
 	step = 1.0;
