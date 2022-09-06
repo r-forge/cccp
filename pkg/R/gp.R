@@ -31,7 +31,7 @@ gp <- function(F0, g0, FList = list(), gList = list(),
         if(mnl == 1L){
             warning("No restrictions provided, trying solve().\n")
             ans <- try(solve(F0, -g0))
-            if(class(ans) == "try-error"){
+            if(inherits(ans, "try-error")){
                 stop("Solving unconstrained objective 'F0 * x + g0' failed.\n")
             } else {
                 return(exp(ans))
