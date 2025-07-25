@@ -10,7 +10,7 @@
 }
 
 \section{Extends}{
-Class \code{"\linkS4class{C++Object}"}, directly.
+Class \code{"\linkS4class[Rcpp]{C++Object}"}, directly.
 All reference classes extend and inherit methods from \code{"\linkS4class{envRefClass}"}.
 }
        
