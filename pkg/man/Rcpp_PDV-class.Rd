@@ -10,8 +10,8 @@
 }
 
 \section{Extends}{
-Class \code{"\linkS4class[Rcpp]{C++Object}"}, directly.
-All reference classes extend and inherit methods from \code{"\linkS4class{envRefClass}"}.
+Class \link[Rcpp]{C++Object-class}, directly.
+All reference classes extend and inherit methods from \link{envRefClass-class}.
 }
        
 \section{Fields}{
